@@ -52,17 +52,32 @@ board = [
     "############################"
 ]
 
-pacman_img = pygame.image.load('assets/pacman.png')
+# Initialize variables
+pacman_x, pacman_y = 13, 23  # Starting position of Pac-Man
+pacman_direction = 'LEFT'   # Default direction
+score = 0
+
+# Initialize ghost positions
+ghosts = [
+    {'x': 13, 'y': 11},  # Ghost 1 starting position
+    {'x': 14, 'y': 11},  # Ghost 2 starting position
+    {'x': 13, 'y': 12},  # Ghost 3 starting position
+    {'x': 14, 'y': 12}   # Ghost 4 starting position
+]
+
+# Load assets
+pacman_img = pygame.image.load('Pacman/assets/pacman.png')
 ghost_imgs = [
-    pygame.image.load('assets/yellow.png'),
-    pygame.image.load('assets/red.png'),
-    pygame.image.load('assets/blue.png'),
-    pygame.image.load('assets/green.png')
+    pygame.image.load('Pacman/assets/yellow.png'),
+    pygame.image.load('Pacman/assets/red.png'),
+    pygame.image.load('Pacman/assets/blue.png'),
+    pygame.image.load('Pacman/assets/green.png')
 ]
 
 pacman_img = pygame.transform.scale(pacman_img, (CELL_SIZE, CELL_SIZE))
 for i in range(len(ghost_imgs)):
     ghost_imgs[i] = pygame.transform.scale(ghost_imgs[i], (CELL_SIZE, CELL_SIZE))
+
 
 def draw_board():
     for y, row in enumerate(board):
