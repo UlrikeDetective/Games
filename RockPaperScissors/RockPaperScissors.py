@@ -7,11 +7,11 @@ root.resizable(0,0)
 root.title('DataFlair-Rock,Paper,Scissors')
 root.config(bg ='seashell3')
 
-Label(root, text = 'Rock, Paper ,Scissors' , font='arial 20 bold', bg = 'seashell2').pack()
+Label(root, text = 'Rock, Paper ,Scissors' , font='arial 20 bold', bg = 'seashell2', fg='black').pack() #seashell2
 
 user_take = StringVar()
-Label(root, text = 'choose any one: rock, paper ,scissors' , font='arial 15 bold', bg = 'seashell2').place(x = 20,y=70)
-Entry(root, font = 'arial 15', textvariable = user_take , bg = 'antiquewhite2').place(x=90 , y = 130)
+Label(root, text = 'choose any one: rock, paper ,scissors' , font='arial 15 bold', bg = 'seashell2', fg='black').place(x = 20,y=70)
+Entry(root, font = 'arial 15', textvariable = user_take , bg = 'seashell2', fg='black').place(x=90 , y = 130) #antiquewhite2
 
 comp_pick = random.randint(1,3)
 if comp_pick == 1:
@@ -46,7 +46,7 @@ def Reset():
     Result.set("") 
     user_take.set("")
 
-Entry(root, font = 'arial 10 bold', textvariable = Result, bg ='antiquewhite2',width = 50,).place(x=25, y = 250)
+Entry(root, font = 'arial 10 bold', textvariable = Result, bg ='black', fg='black', width = 50).place(x=25, y = 250)
 
 Button(root, font = 'arial 13 bold', text = 'PLAY'  ,padx =5,bg ='seashell4' ,command = play).place(x=150,y=190)
 
@@ -54,6 +54,4 @@ Button(root, font = 'arial 13 bold', text = 'RESET'  ,padx =5,bg ='seashell4' ,c
 
 Button(root, font = 'arial 13 bold', text = 'exit'  ,padx =5,bg ='seashell4' ,command = exit).place(x=230,y=310)
 
-
 root.mainloop()
-
