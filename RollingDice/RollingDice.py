@@ -40,9 +40,13 @@ def rolling_dice():
     ImageLabel.configure(image=random_image)
     ImageLabel.image = random_image  # Keep a reference to avoid garbage collection
 
-# Button to roll the dice
-button = tkinter.Button(root, text='Roll the Dice', fg='blue', command=rolling_dice)
-button.pack(expand=True)
+# Button to roll the dice initially
+roll_button = tkinter.Button(root, text='Roll the Dice', fg='blue', command=rolling_dice)
+roll_button.pack(expand=True)
+
+# Button to roll the dice again
+roll_again_button = tkinter.Button(root, text='Roll Dice Again', fg='green', command=rolling_dice)
+roll_again_button.pack(expand=True)
 
 # Start the Tkinter event loop
 root.mainloop()
